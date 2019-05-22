@@ -100,6 +100,9 @@ source $HOME/.zshrc.alias
 # shorter prompt for zsh agnoster theme
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=`whoami`
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # environment setup
 source $HOME/.zshrc.3party
 source $HOME/.zshrc.custom
