@@ -1,0 +1,3 @@
+
+# my bin
+export PATH="$HOME/.bin:$PATH"
