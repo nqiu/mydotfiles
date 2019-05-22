@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/qiuwenlin/.oh-my-zsh"
+export ZSH="/Users/`whoami`/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -63,7 +63,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    zsh-autosuggestions zsh-syntax-highlighting zsh-completions history-substring-search
+    zsh-autosuggestions zsh-syntax-highlighting history-substring-search
     git git-flow z fasd urltools extract themes history encode64 docker web-search) 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc.alias
 
 # shorter prompt for zsh agnoster theme
-[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="qiuwenlin"
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=`whoami`
 
 # environment setup
 source $HOME/.zshrc.3party

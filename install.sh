@@ -8,25 +8,25 @@ TIMESTAMP=$(date +%Y%m%d%H%M%S)
 
 
 # backup .vimrc
-[[ -f "$HOME/.vimrc" ]] && {
-    mv "$HOME/.vimrc" "$HOME/.vimrc_bak_$TIMESTAMP"
-}
+#[[ -f "$HOME/.vimrc" ]] && {
+    #mv "$HOME/.vimrc" "$HOME/.vimrc_bak_$TIMESTAMP"
+#}
 # copy .vimrc to user HOME
 cp $BASE_DIR/.vimrc $HOME/.vimrc
 
 # install needed packages
-echo "please make sure you have installed: "
-echo "  vim git ack-grep exuberant-ctags pep8 flake8 pyflakes isort yapf"
+#echo "please make sure you have installed: "
+#echo "  vim git ack-grep exuberant-ctags pep8 flake8 pyflakes isort yapf"
 
 # install vim plugins
 vim +PlugInstall +qa --not-a-term
 
 
 # backup .zshrc
-[[ -f "$HOME/.zshrc" ]] && {
-    mkdir "$HOME/.zsh_bak_$TIMESTAMP"
-    mv "$HOME/.zshrc*" "$HOME/.zshrc_$TIMESTAMP/"
-}
+#[[ -f "$HOME/.zshrc" ]] && {
+    #mkdir "$HOME/.zsh_bak_$TIMESTAMP"
+    #mv "$HOME/.zshrc" "$HOME/.zsh_bak_$TIMESTAMP/"
+#}
 
 # copy .zshrc to user HOME
 cp $BASE_DIR/.zshrc $HOME/.zshrc
