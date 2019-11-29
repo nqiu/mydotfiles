@@ -4,32 +4,56 @@ set -x
 set -e
 
 BASE_DIR=$(dirname "$0")
-TIMESTAMP=$(date +%Y%m%d%H%M%S)
+
+# install zsh
+if ! which zsh &> /dev/null; then
+    echo "zsh required, please install zsh first"
+    exit
+fi
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install zsh-plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+# custom
+cp $BASE_DIR/.zshrc $HOME
+cp $BASE_DIR/.zshrc.aliases $HOME
+cp $BASE_DIR/.zshrc.3party $HOME
+cp $BASE_DIR/.zshrc.custom $HOME
 
 
-# backup .vimrc
-#[[ -f "$HOME/.vimrc" ]] && {
-    #mv "$HOME/.vimrc" "$HOME/.vimrc_bak_$TIMESTAMP"
-#}
-# copy .vimrc to user HOME
-cp $BASE_DIR/.vimrc $HOME/.vimrc
+# install vim
+if ! which vim &> /dev/null; then
+    echo "vim 8.0 required, please install vim first"
+    exit
+fi
 
-# install needed packages
-#echo "please make sure you have installed: "
-#echo "  vim git ack-grep exuberant-ctags pep8 flake8 pyflakes isort yapf"
+# install spf13-vim
+curl https://j.mp/spf13-vim3 -L > $BASE_DIR/spf13-vim.sh && sh $BASE_DIR/spf13-vim.sh
 
-# install vim plugins
-vim +PlugInstall +qa --not-a-term
+# custom
+cp $BASE_DIR/.vimrc.local $HOME
+cp $BASE_DIR/.vimrc.bundles.local $HOME
+cp $BASE_DIR/.vimrc.before.local $HOME
 
 
-# backup .zshrc
-#[[ -f "$HOME/.zshrc" ]] && {
-    #mkdir "$HOME/.zsh_bak_$TIMESTAMP"
-    #mv "$HOME/.zshrc" "$HOME/.zsh_bak_$TIMESTAMP/"
-#}
+# install tmux
+if ! which tmux &> /dev/null; then
+    echo "tmux >=2.2 required, please install tmux first"
+    exit
+fi
 
-# copy .zshrc to user HOME
-cp $BASE_DIR/.zshrc $HOME/.zshrc
-cp $BASE_DIR/.zshrc.alias $HOME/.zshrc.alias
-cp $BASE_DIR/.zshrc.3party $HOME/.zshrc.3party
-cp $BASE_DIR/.zshrc.custom $HOME/.zshrc.custom
+# install oh-my-tmux
+cd $HOME
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+
+# custom
+cp $BASE_DIR/.tmux.conf.local $HOME
+

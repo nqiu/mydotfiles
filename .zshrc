@@ -63,7 +63,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    zsh-autosuggestions zsh-syntax-highlighting history-substring-search
+    zsh-autosuggestions zsh-syntax-highlighting history-substring-search asdf
     git git-flow z fasd urltools extract themes history encode64 docker web-search) 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,13 +95,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.zshrc.alias
+source $HOME/.zshrc.aliases
 
 # shorter prompt for zsh agnoster theme
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=`whoami`
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
 
 # environment setup
 source $HOME/.zshrc.3party

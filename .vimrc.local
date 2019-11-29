@@ -1,0 +1,50 @@
+" Gutentags
+" let &tags = &tags . ',' . '~/.cache/tags'
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" config project root markers.
+let g:gutentags_project_root = ['.root', '.git', '.project', '.hg', ]
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+
+" for typescript-vim
+let g:typescript_indent_disable = 1
+setlocal indentkeys+=0.
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = '--lib es6'
+
+
+" maximize split window in new tab
+function! Zoom ()
+    " check if is the zoomed state (tabnumber > 1 && window == 1)
+    if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
+        let l:cur_winview = winsaveview()
+        let l:cur_bufname = bufname('')
+        tabclose
+
+        " restore the view
+        if l:cur_bufname == bufname('')
+            call winrestview(cur_winview)
+        endif
+    else
+        tab split
+    endif
+endfunction
+nmap <leader>z :call Zoom()<CR>
+
+" jedi-vim
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "0"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#smart_auto_mappings = 0
+
+" set indentation for .proto/.thrift files
+autocmd BufRead,BufNewFile *.proto,*.thrift setlocal ts=4 sts=4 sw=4 expandtab
