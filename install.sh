@@ -1,12 +1,22 @@
 #!/bin/bash
 
-set -x
-set -e
+# set -x
+# set -e
 
 BASE_DIR=$(dirname "$0")
 
+# make sure git and curl installed
+if ! `which git &> /dev/null`; then
+    echo "git required, please install git first"
+    exit
+fi
+if ! `which curl &> /dev/null`; then
+    echo "curl required, please install curl first"
+    exit
+fi
+
 # install zsh
-if ! which zsh &> /dev/null; then
+if ! `which zsh &> /dev/null`; then
     echo "zsh required, please install zsh first"
     exit
 fi
@@ -28,7 +38,7 @@ cp $BASE_DIR/.zshrc.custom $HOME
 
 
 # install vim
-if ! which vim &> /dev/null; then
+if ! `which vim &> /dev/null`; then
     echo "vim 8.0 required, please install vim first"
     exit
 fi
@@ -43,7 +53,7 @@ cp $BASE_DIR/.vimrc.before.local $HOME
 
 
 # install tmux
-if ! which tmux &> /dev/null; then
+if ! `which tmux &> /dev/null`; then
     echo "tmux >=2.2 required, please install tmux first"
     exit
 fi
