@@ -5,7 +5,7 @@
 
 BASE_DIR=$(dirname "$0")
 
-# make sure git and curl installed
+# Requirements
 if ! `which git &> /dev/null`; then
     echo "git required, please install git first"
     exit
@@ -15,15 +15,23 @@ if ! `which curl &> /dev/null`; then
     exit
 fi
 
-# install zsh
 if ! `which zsh &> /dev/null`; then
     echo "zsh required, please install zsh first"
     exit
 fi
 
+if ! `which vim &> /dev/null`; then
+    echo "vim 8.0 required, please install vim first"
+    exit
+fi
+
+if ! `which tmux &> /dev/null`; then
+    echo "tmux >=2.2 required, please install tmux first"
+    exit
+fi
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # install zsh-plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -37,27 +45,6 @@ cp $BASE_DIR/.zshrc.3party $HOME
 cp $BASE_DIR/.zshrc.custom $HOME
 
 
-# install vim
-if ! `which vim &> /dev/null`; then
-    echo "vim 8.0 required, please install vim first"
-    exit
-fi
-
-# install spf13-vim
-curl https://j.mp/spf13-vim3 -L > $BASE_DIR/spf13-vim.sh && sh $BASE_DIR/spf13-vim.sh
-
-# custom
-cp $BASE_DIR/.vimrc.local $HOME
-cp $BASE_DIR/.vimrc.bundles.local $HOME
-cp $BASE_DIR/.vimrc.before.local $HOME
-
-
-# install tmux
-if ! `which tmux &> /dev/null`; then
-    echo "tmux >=2.2 required, please install tmux first"
-    exit
-fi
-
 # install oh-my-tmux
 cd $HOME
 git clone https://github.com/gpakosz/.tmux.git
@@ -66,4 +53,13 @@ cp .tmux/.tmux.conf.local .
 
 # custom
 cp $BASE_DIR/.tmux.conf.local $HOME
+
+
+# install spf13-vim
+curl https://j.mp/spf13-vim3 -L > $BASE_DIR/spf13-vim.sh && sh $BASE_DIR/spf13-vim.sh
+
+# custom
+cp $BASE_DIR/.vimrc.local $HOME
+cp $BASE_DIR/.vimrc.bundles.local $HOME
+cp $BASE_DIR/.vimrc.before.local $HOME
 
