@@ -38,19 +38,19 @@ while [[ "$#" -gt 0 ]]; do case $1 in
 esac; shift; done
 
 # install oh-my-zsh
-if [[ "$zsh" -eq "1" ]]; then
+if [[ "$zsh" == "1" ]]; then
     zsh/install.sh
 fi
 
 
 # install oh-my-tmux
-if [[ "$tmux" -eq "1" ]];then
+if [[ "$tmux" == "1" ]];then
     tmux/install.sh
 fi
 
 
 # install spf13-vim
-if [[ "$vim" -eq "1" ]]; then
+if [[ "$vim" == "1" ]]; then
     vim/install.sh
 fi
 
