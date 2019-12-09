@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+set -e
+
 TMUX_BASE_DIR=`dirname "$0"`
 TIMESTAMP=`date +"%Y%m%d%H%M%S"`
 
