@@ -10,5 +10,5 @@
 ### 该库使用方法
 运行install.sh脚本
 ```bash
-$ bash install.sh
+$ bash install.sh --with-zsh --with-tmux --with-vim
 ```

@@ -30,14 +30,27 @@ if ! `which tmux &> /dev/null`; then
     exit
 fi
 
+# parse args
+while [[ "$#" -gt 0 ]]; do case $1 in
+    --with-zsh) zsh=1; shift;;
+    --with-tmux) tmux=1; shift;;
+    --with-vim) vim=1; shift;;
+esac; shift; done
+
 # install oh-my-zsh
-zsh/install.sh
+if [[ "$zsh" -eq "1" ]]; then
+    zsh/install.sh
+fi
 
 
 # install oh-my-tmux
-tmux/install.sh
+if [[ "$tmux" -eq "1" ]];then
+    tmux/install.sh
+fi
 
 
 # install spf13-vim
-vim/install.sh
+if [[ "$vim" -eq "1" ]]; then
+    vim/install.sh
+fi
 
