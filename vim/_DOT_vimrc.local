@@ -48,3 +48,10 @@ let g:jedi#smart_auto_mappings = 0
 
 " set indentation for .proto/.thrift files
 autocmd BufRead,BufNewFile *.proto,*.thrift setlocal ts=4 sts=4 sw=4 expandtab
+
+" for ack.vim
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
+" esc
+inoremap jk <esc>
