@@ -7,10 +7,7 @@ TIMESTAMP=`date +"%Y%m%d%H%M%S"`
 
 # install ohmyzsh
 if [ -d "$HOME/.oh-my-zsh" ]; then
-    cp -r $HOME/.oh-my-zsh $HOME/.oh-my-zsh.back_$TIMESTAMP
-    cd $HOME/.oh-my-zsh && git pull
-else
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
+    mv $HOME/.oh-my-zsh $HOME/.oh-my-zsh.back_$TIMESTAMP
 fi
 
 
