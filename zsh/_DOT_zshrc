@@ -64,7 +64,9 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "spaceship" "ys" "lambda
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     zsh-autosuggestions zsh-syntax-highlighting history-substring-search asdf tmux
-    git git-flow z fasd urltools extract themes history encode64 docker web-search) 
+    git git-flow z fasd urltools extract themes history encode64 docker web-search
+    git-open
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
