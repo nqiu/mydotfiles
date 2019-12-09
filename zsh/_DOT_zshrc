@@ -14,7 +14,12 @@ ZSH_THEME="random"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "spaceship" "ys" "lambda-mod" )
+ZSH_THEME_RANDOM_CANDIDATES=(
+    "robbyrussell" "agnoster" "ys" "sunrise" "avit" "kolo"
+    "pygmalion" "muse" "bureau" "blinks" "bira" "af-magic"
+    "sorin" "sm" "igeek" "enlightenment" "spaceship" "lambda-mod"
+    "elessar" "pi" "lambda-gitster"
+)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -63,9 +68,9 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "spaceship" "ys" "lambda
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    zsh-autosuggestions zsh-syntax-highlighting history-substring-search asdf tmux
-    git git-flow z fasd urltools extract themes history encode64 docker web-search
-    git-open
+    zsh-autosuggestions zsh-syntax-highlighting history-substring-search zsh-completions asdf tmux
+    git git-flow z fasd urltools extract themes history encode64 docker web-search colored-man-pages
+    git-open emoji-clock mosh autoenv thefuck fzf
 )
 source $ZSH/oh-my-zsh.sh
 

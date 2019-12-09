@@ -54,3 +54,7 @@ if [[ "$vim" == "1" ]]; then
     vim/install.sh
 fi
 
+# TODO
+# install fzf
+# install tldr
+# install cheat

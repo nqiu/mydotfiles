@@ -2,5 +2,8 @@
 # my bin
 export PATH="$HOME/.bin:$PATH"
 
-# for consul
-export CONSUL_HTTP_HOST='10.227.7.166'
+# zsh autoenv plugin
+source ~/.autoenv/activate.sh
+
+# zsh-completions init
+autoload -U compinit && compinit
