@@ -9,6 +9,7 @@ TIMESTAMP=`date +"%Y%m%d%H%M%S"`
 if [ -d "$HOME/.oh-my-zsh" ]; then
     mv $HOME/.oh-my-zsh $HOME/.oh-my-zsh.back_$TIMESTAMP
 fi
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
 
 
 # install zsh-plugins
