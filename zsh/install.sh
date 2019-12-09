@@ -9,6 +9,9 @@ TIMESTAMP=`date +"%Y%m%d%H%M%S"`
 if [ -d "$HOME/.oh-my-zsh" ]; then
     mv $HOME/.oh-my-zsh $HOME/.oh-my-zsh.back_$TIMESTAMP
 fi
+if [ -f "$HOME/.zshrc" ]; then
+    mv $HOME/.zshrc $HOME/.zshrc.back_$TIMESTAMP
+fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
 
 
@@ -48,10 +51,10 @@ ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/lambda-gitster/lambda-gitster.z
 
 
 # custom
-if [ -f "$HOME/.zshrc" ]; then
-    mv $HOME/.zshrc $HOME/.zshrc.back_$TIMESTAMP
-fi
-cp $ZSH_BASE_DIR/_DOT_zshrc $HOME/.zshrc
+# if [ -f "$HOME/.zshrc" ]; then
+#     mv $HOME/.zshrc $HOME/.zshrc.back_$TIMESTAMP
+# fi
+cp -f $ZSH_BASE_DIR/_DOT_zshrc $HOME/.zshrc
 if [ -f "$HOME/.zshrc.aliases" ]; then
     mv $HOME/.zshrc.aliases $HOME/.zshrc.aliases.back_$TIMESTAMP
 fi
