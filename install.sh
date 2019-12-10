@@ -4,6 +4,7 @@
 # set -e
 
 BASE_DIR=$(dirname "$0")
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")
 
 # Requirements
 if ! `which git &> /dev/null`; then
@@ -30,6 +31,25 @@ if ! `which tmux &> /dev/null`; then
     exit
 fi
 
+# install fzf
+if [ -d "$HOME/.fzf" ]; then
+    mv $HOME/.fzf $HOME.fzf.back_$TIMESTAMP
+fi
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install
+
+# install tldr
+mkdkr -p $HOME/.bin
+curl -o $HOME/.bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr
+chmod +x $HOME/.bin/tldr
+
+# install eg
+if [ -d "$HOME/.eg" ]; then
+    mv $HOME/.eg $HOME/.eg.back_$TIMESTAMP
+fi
+git clone https://github.com/srsudar/eg $HOME/.eg
+ln -s $HOME/.eg/eg_exec.py $HOME/.bin/eg
+
 # parse args
 while [[ "$#" -gt 0 ]]; do case $1 in
     --with-zsh) zsh=1; shift;;
@@ -42,19 +62,13 @@ if [[ "$zsh" == "1" ]]; then
     zsh/install.sh
 fi
 
-
 # install oh-my-tmux
 if [[ "$tmux" == "1" ]];then
     tmux/install.sh
 fi
-
 
 # install spf13-vim
 if [[ "$vim" == "1" ]]; then
     vim/install.sh
 fi
 
-# TODO
-# install fzf
-# install tldr
-# install cheat
