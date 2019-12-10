@@ -33,10 +33,10 @@ fi
 
 # install fzf
 if [ -d "$HOME/.fzf" ]; then
-    mv $HOME/.fzf $HOME.fzf.back_$TIMESTAMP
+    mv $HOME/.fzf $HOME/.fzf.back_$TIMESTAMP
 fi
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
-$HOME/.fzf/install
+$HOME/.fzf/install --key-bindings --completion --no-update-rc --no-bash --no-fish
 
 # install tldr
 mkdir -p $HOME/.bin
