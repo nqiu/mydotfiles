@@ -39,7 +39,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
 $HOME/.fzf/install
 
 # install tldr
-mkdkr -p $HOME/.bin
+mkdir -p $HOME/.bin
 curl -o $HOME/.bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr
 chmod +x $HOME/.bin/tldr
 
