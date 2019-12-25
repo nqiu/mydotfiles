@@ -12,3 +12,8 @@
 ```bash
 $ bash install.sh --with-zsh --with-tmux --with-vim
 ```
+
+### TODO
+1. zsh常用技巧文档
+2. vim快捷键汇总
+3. tmux常用快捷键汇总

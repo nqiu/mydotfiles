@@ -15,10 +15,11 @@ ZSH_THEME="random"
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 ZSH_THEME_RANDOM_CANDIDATES=(
-    "robbyrussell" "agnoster" "ys" "sunrise" "avit" "kolo"
-    "pygmalion" "muse" "bureau" "blinks" "bira" "af-magic"
-    "sorin" "sm" "igeek" "enlightenment" "spaceship" "lambda-mod"
-    "elessar" "pi" "lambda-gitster"
+    # with user/host info
+    "blinks" "lambda-mod" "pygmalion" "sm" "bureau" "bira" "ys"
+    # without user/host info
+    "robbyrussell" "agnoster" "af-magic" "sorin" "pi" "igeek" "kolo" "spaceship"
+    "sunrise" "elessar" "muse" "avit" "enlightenment" "lambda-gitster"
 )
 
 # Uncomment the following line to use case-sensitive completion.
