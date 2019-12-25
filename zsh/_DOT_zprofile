@@ -1,0 +1,9 @@
+
+export PATH="$HOME/.bin:$PATH"
+
+# golang Workspace
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin:/usr/local/opt/gettext/bin:/usr/local/opt/python/libexec/bin"
+
+# macports
+export PATH="$PATH:/opt/local/bin"

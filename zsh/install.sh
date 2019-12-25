@@ -59,12 +59,12 @@ if [ -f "$HOME/.zshrc.aliases" ]; then
     mv $HOME/.zshrc.aliases $HOME/.zshrc.aliases.back_$TIMESTAMP
 fi
 cp $ZSH_BASE_DIR/_DOT_zshrc.aliases $HOME/.zshrc.aliases
-if [ -f "$HOME/.zshrc.3party" ]; then
-    mv $HOME/.zshrc.3party $HOME/.zshrc.3party.back_$TIMESTAMP
-fi
-cp $ZSH_BASE_DIR/_DOT_zshrc.3party $HOME/.zshrc.3party
 if [ -f "$HOME/.zshrc.custom" ]; then
     mv $HOME/.zshrc.custom $HOME/.zshrc.custom.back_$TIMESTAMP
 fi
 cp $ZSH_BASE_DIR/_DOT_zshrc.custom $HOME/.zshrc.custom
+if [ -f "$HOME/.zprofile" ]; then
+    mv $HOME/.zprofile $HOME/.zprofile.back_$TIMESTAMP
+fi
+cp $ZSH_BASE_DIR/_DOT_zprofile $HOME/.zprofile
 

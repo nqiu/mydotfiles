@@ -1,9 +1,19 @@
 
-# my bin
-export PATH="$HOME/.bin:$PATH"
-
 # zsh autoenv plugin
 source ~/.autoenv/activate.sh
 
 # zsh-completions init
 autoload -U compinit && compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# for thefuck command line
+eval $(thefuck --alias)
+
+# zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/zlib/include $CPPFLAGS"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# for consul
+export CONSUL_HTTP_HOST='10.227.7.166'
