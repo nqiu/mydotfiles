@@ -13,5 +13,5 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " for vim-easytags and vim-misc
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-misc'
+" Bundle 'xolox/vim-easytags'
+" Bundle 'xolox/vim-misc'
