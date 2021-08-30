@@ -1,0 +1,11 @@
+" to support vim-go
+let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'go', 'scala', 'javascript', 'html', 'misc',]
+
+" supress vim version-low warnings
+let g:go_version_warning = 0
+
+" suppress Error: vim.command('tjump %s', tagname)
+" let g:jedi#use_tag_stack = 0
+
+" enable powerline symbols
+let g:airline_powerline_fonts=1

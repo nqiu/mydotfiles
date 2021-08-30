@@ -1,0 +1,32 @@
+" remove HTML-AutoCloseTag
+UnBundle 'amirh/HTML-AutoCloseTag'
+
+" auto generate tags file
+Bundle 'ludovicchabant/vim-gutentags'
+Bundle 'skywind3000/gutentags_plus'
+
+" for typescript
+Bundle "leafgarland/typescript-vim"
+
+" for jedi-vim
+Bundle 'davidhalter/jedi-vim'
+Bundle 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+" for vim-easytags and vim-misc
+" Bundle 'xolox/vim-easytags'
+
+" for lua
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-lua-ftplugin'
+
+" for kubernetes
+Bundle 'andrewstuart/vim-kubernetes'
+" for dockerfile
+Bundle 'ekalinin/Dockerfile.vim'
+
+" for flutter & dart
+Bundle 'thosakwe/vim-flutter'
+Bundle 'dart-lang/dart-vim-plugin'
+
+" for vim-vue
+Bundle 'posva/vim-vue'
